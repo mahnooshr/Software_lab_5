@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class JavaCup {
     public static void main(String[] args)
@@ -23,12 +24,15 @@ public class JavaCup {
         else { System.out.println("NO"); }
     }
     public static void temp() {
-        ArrayList a = new ArrayList();
-        for (int i = 0; i < 10000; i++)
-        {
+
+        int totalIterations = 10000 * 20000;
+        ArrayList<Integer> a = new ArrayList<>(totalIterations);
+
+        IntStream.range(0, 10000).parallel().forEach(i -> {
+
             for (int j = 0; j < 20000; j++) {
                 a.add(i + j);
             }
-        }
+        });
     }
 }
