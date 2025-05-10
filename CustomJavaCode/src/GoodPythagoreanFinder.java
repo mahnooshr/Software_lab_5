@@ -1,10 +1,8 @@
-import java.util.ArrayList;
+public class GoodPythagoreanFinder {
 
-public class BadPythagoreanFinder {
     public static int findNumberOfPythagoreanTriples(int[] numbers) {
         int n = numbers.length;
-
-        ArrayList<Integer> results = new ArrayList<>();
+        int count = 0;
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -14,18 +12,12 @@ public class BadPythagoreanFinder {
                     int c = numbers[k];
 
                     if (a * a + b * b == c * c) {
-                        results.add(1);
-                    } else {
-                        results.add(0);
+                        count++;
                     }
                 }
             }
         }
 
-        int count = 0;
-        for (int i = 0; i < results.stream().count(); i++) {
-            count += results.get(i);
-        }
         return count / 2;
     }
 }

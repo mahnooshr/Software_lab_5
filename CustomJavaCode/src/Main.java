@@ -5,7 +5,7 @@ public class Main {
         int m = 100000;
         int[] numbers = RandomArrayGenerator.generateRandoms(n, m);
         System.out.println("randoms generated.");
-        int pythagoreanTriplesCnt = BadPythagoreanFinder.findNumberOfPythagoreanTriples(numbers);
+        int pythagoreanTriplesCnt = GoodPythagoreanFinder.findNumberOfPythagoreanTriples(numbers);
         System.out.println(pythagoreanTriplesCnt);
     }
 }
