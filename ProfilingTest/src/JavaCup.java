@@ -25,14 +25,11 @@ public class JavaCup {
     }
     public static void temp() {
 
-        int totalIterations = 10000 * 20000;
-        ArrayList<Integer> a = new ArrayList<>(totalIterations);
-
-        IntStream.range(0, 10000).parallel().forEach(i -> {
-
+        ArrayList<Integer> a = new ArrayList<>(10000 * 20000);
+        for (int i = 0; i < 10000; i++) {
             for (int j = 0; j < 20000; j++) {
                 a.add(i + j);
             }
-        });
+        }
     }
 }
